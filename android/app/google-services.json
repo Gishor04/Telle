@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1043279156392",
+    "project_id": "tellie-1b9ee",
+    "storage_bucket": "tellie-1b9ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043279156392:android:ed0e26d1e56fe4a3a49e9d",
+        "android_client_info": {
+          "package_name": "com.example.tellie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043279156392-t6a1h5rk47pkv1iaokcn6f71io4n2d82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhkHkUcTjW11VjVPDn0-l8PbuFwX8ZgHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043279156392-t6a1h5rk47pkv1iaokcn6f71io4n2d82.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
