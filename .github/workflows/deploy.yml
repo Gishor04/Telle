@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -27,18 +27,17 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.13.0'   # better stable version than 3.7.12
-          channel: 'stable'
+          channel: stable
           cache: true
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
 
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build Flutter web
+      - name: Build Flutter Web
         run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -46,12 +45,12 @@ jobs:
           path: build/web
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-    needs: build
 
     steps:
       - name: Deploy to GitHub Pages
